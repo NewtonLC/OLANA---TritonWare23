@@ -11,19 +11,27 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        //If a movement key is pressed, set speed to MAX_PLAYER_SPEED.
-        //If a movement key is not pressed, then for each frame, lower player speed.
-        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)){
-
+        //Code that lowers speed if no movement keys are pressed, so the player stops smoothly.
+        if(is_Movement_Key_Pressed()){
+            playerSpeed = MAX_PLAYER_SPEED;
         }
+        else{
+            playerSpeed -= 0.25f;
+        }
+
+        //Code that causes movement
         direction = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
         direction.Normalize();
         transform.Translate(direction*Time.deltaTime*playerSpeed);
+
+        //TODO: Add sword-swinging functionality, if player clicks then run sword anim
     }
 
     bool is_Movement_Key_Pressed(){
         foreach(KeyCode movementKey in MovementKeys){
-
+            if(Input.GetKey(movementKey)){
+                return true;
+            }
         }
         return false;
     }
