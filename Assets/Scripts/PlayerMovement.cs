@@ -6,8 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private Vector2 direction;
     private float playerSpeed = 0;
-    public float MAX_PLAYER_SPEED = 10.0f;
-    public float slowRate = 0.5f;
+    public float MAX_PLAYER_SPEED = 5.0f;
+    public float slowRate = 0.25f;
     private KeyCode[] MovementKeys = {KeyCode.W,KeyCode.A,KeyCode.S,KeyCode.D};
 
     void FixedUpdate()
