@@ -6,7 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private Vector2 direction;
     private float playerSpeed = 0;
-    private const int MAX_PLAYER_SPEED = 5;
+    public float MAX_PLAYER_SPEED = 10.0f;
+    public float slowRate = 0.5f;
     private KeyCode[] MovementKeys = {KeyCode.W,KeyCode.A,KeyCode.S,KeyCode.D};
 
     void FixedUpdate()
@@ -16,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
             playerSpeed = MAX_PLAYER_SPEED;
         }
         else{
-            playerSpeed -= 0.25f;
+            playerSpeed -= slowRate;
         }
 
         //Code that causes movement
