@@ -24,8 +24,6 @@ public class PlayerMovement : MonoBehaviour
         direction = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
         direction.Normalize();
         transform.Translate(direction*Time.deltaTime*playerSpeed);
-
-        //TODO: Add sword-swinging functionality, if player clicks then run sword anim
     }
 
     bool is_Movement_Key_Pressed(){
