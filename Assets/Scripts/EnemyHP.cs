@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyHP : MonoBehaviour
 {
     public int HP;
+    public int Enemy_dmg;
+    public string ID;
 
     // Start is called before the first frame update
     void Start()
