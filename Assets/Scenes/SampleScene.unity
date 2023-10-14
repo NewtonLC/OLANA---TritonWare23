@@ -261,7 +261,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &482626666
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -379,6 +379,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6267050115297827416, guid: aa3c2db536bbbb24995a39d08378df0b, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6267050115297827417, guid: aa3c2db536bbbb24995a39d08378df0b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -439,6 +443,10 @@ PrefabInstance:
     - target: {fileID: 3712078245144075353, guid: 426aa4a5ea4c0674bb2fb3069804b4ac, type: 3}
       propertyPath: m_Name
       value: GhostObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 3712078245144075356, guid: 426aa4a5ea4c0674bb2fb3069804b4ac, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3712078245144075357, guid: 426aa4a5ea4c0674bb2fb3069804b4ac, type: 3}
       propertyPath: m_RootOrder
@@ -760,6 +768,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8480876951467950109, guid: c1a6fc839e4114b46aa14bfbcee643d2, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1a6fc839e4114b46aa14bfbcee643d2, type: 3}
 --- !u!1001 &1783667684
@@ -812,6 +824,10 @@ PrefabInstance:
     - target: {fileID: 2006196786659304264, guid: 6ef8a690bfed4d04aa4b67d6a54d1e7e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006196786659304265, guid: 6ef8a690bfed4d04aa4b67d6a54d1e7e, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2006196786659304268, guid: 6ef8a690bfed4d04aa4b67d6a54d1e7e, type: 3}
       propertyPath: m_Name
