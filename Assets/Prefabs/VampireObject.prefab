@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee4d47f85b1182498ab8e93dcca8da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 1
+  HP: 10
   Enemy_dmg: 1
   ID: vampire
 --- !u!60 &2006196786659304262

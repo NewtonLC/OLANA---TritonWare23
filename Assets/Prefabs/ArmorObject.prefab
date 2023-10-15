@@ -101,6 +101,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: armor
+  speed: 0.03
+  Player: {fileID: 0}
+  player: {fileID: 0}
+  running_away: 0
+  lunge_distance: 3
+  lunge_length: 4
+  lunge_speed: 0.15
+  lunge_startup: 0.6
+  lunge_cooldown: 5
 --- !u!114 &8480876951467950105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ee4d47f85b1182498ab8e93dcca8da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 1
+  HP: 4
   Enemy_dmg: 1
   ID: armor
 --- !u!60 &8480876951467950098

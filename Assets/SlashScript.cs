@@ -5,19 +5,21 @@ using UnityEngine;
 public class SlashScript : MonoBehaviour
 {
     //Variables for handling attacks
-    private float slash_duration = 0.1f;
+    public float slash_duration = 0.1f;
     private float slash_cooldown = 0.5f;
     private float slash_distance_to_player = 1.6f;
     private bool can_slash = true;
+    public int slash_dmg;
 
-    //
     public Color slash_active;
     public Color slash_inactive;
     public SpriteRenderer slash_renderer;
+    public PolygonCollider2D slash_collider;
 
     void Start(){
         // Get the SpriteRenderer component attached to this GameObject.
         slash_renderer = GetComponent<SpriteRenderer>();
+        slash_collider.enabled = false;
     }
 
     // Update is called once per frame
@@ -30,15 +32,16 @@ public class SlashScript : MonoBehaviour
     }
 
     private void Slash_Attack(){
-        Face_Cursor();
         if (can_slash){
+            can_slash = false;
+            Face_Cursor();
             StartCoroutine(Slash_Duration());
             StartCoroutine(Slash_Cooldown());
         }
     }
 
     private void Face_Cursor(){
-        transform.position = new Vector3(0,0,0);
+        transform.localPosition = new Vector3(0,0,0);
 
         // Get the mouse position in world space.
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -59,10 +62,11 @@ public class SlashScript : MonoBehaviour
     private IEnumerator Slash_Duration(){
         //Show the sword and turn on the collider
         slash_renderer.color = slash_active;
-        can_slash = false;
+        slash_collider.enabled = true;
         yield return new WaitForSeconds(slash_duration);
         //Hide the sword and turn off the collider
         slash_renderer.color = slash_inactive;
+        slash_collider.enabled = false;
     }
 
     private IEnumerator Slash_Cooldown(){
