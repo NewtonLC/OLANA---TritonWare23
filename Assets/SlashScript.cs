@@ -25,14 +25,15 @@ public class SlashScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0)){
-            //Swing sword
+        if(Input.GetMouseButtonDown(0) && string.Equals(WeaponSwitchScript.current_weapon_equipped, "axe")){
+            //Swing axe
             Slash_Attack();
         }
     }
 
     private void Slash_Attack(){
         if (can_slash){
+            Debug.Log("Axe slash!");
             can_slash = false;
             Face_Cursor();
             StartCoroutine(Slash_Duration());
@@ -40,6 +41,7 @@ public class SlashScript : MonoBehaviour
         }
     }
 
+    // Faces the slash hitbox towards the direction of the mouse
     private void Face_Cursor(){
         transform.localPosition = new Vector3(0,0,0);
 
