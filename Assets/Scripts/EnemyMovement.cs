@@ -27,6 +27,9 @@ public class EnemyMovement : MonoBehaviour
     private bool lunge_is_cooled_down = true;
     private Vector3 lunge_direction;
 
+    //Variable for ghost modifier
+    public float ghost_speedRate = 1.003f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +58,21 @@ public class EnemyMovement : MonoBehaviour
     // Method that handle's ghost movement patterns
     // Ghosts will ... (move directly at player?)
     private void GhostMovement(){
+        Vector3 directionTo = player.position - transform.position;
+        
+        //Speeds up to the player unless running away
+        if (running_away)
+        {
+            //Reset speed/slow down, depends on candelabra implementation
+            transform.position -= directionTo.normalized * speed;
+        }
+        else
+        {
+            //Default Movement
+            speed *= ghost_speedRate;
+            transform.position += directionTo.normalized * speed;
+        }
+
 
     }
 
