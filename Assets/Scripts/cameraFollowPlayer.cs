@@ -10,11 +10,13 @@ public class cameraFollowPlayer : MonoBehaviour
     public Vector3 offset = new Vector3(0,0,-1);
     public Vector3 minBound, maxBound;
     [Range(1,5)]
-    public float followSpeed;
+    public float followSpeed = 3.0f;
 
     void Start()
     {
         transform.position = player.position;
+        maxBound.z = -10;
+        minBound.z = -1;
         
     }
 
