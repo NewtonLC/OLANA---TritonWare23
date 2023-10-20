@@ -101,6 +101,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: ghost
+  speed: 0.04
+  Player: {fileID: 0}
+  player: {fileID: 0}
+  running_away: 0
+  lunge_distance: 0
+  lunge_length: 0
+  lunge_speed: 0
+  lunge_startup: 0
+  lunge_cooldown: 0
+  ghost_speedRate: 1.003
+  knockback_force: 1.2
 --- !u!114 &3712078245144075352
 MonoBehaviour:
   m_ObjectHideFlags: 0

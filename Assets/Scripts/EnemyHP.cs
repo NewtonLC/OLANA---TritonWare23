@@ -29,7 +29,7 @@ public class EnemyHP : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int dmg, float duration){
+    private void TakeDamage(int dmg, float duration){
         if(!invincible){
             invincible = true;
             HP -= dmg;

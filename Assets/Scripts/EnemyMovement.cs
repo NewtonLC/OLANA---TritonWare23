@@ -13,6 +13,9 @@ public class EnemyMovement : MonoBehaviour
     public GameObject Player;
     public Transform player;
 
+    //Enemy RigidBody2D Reference
+    //Rigidbody2D rb;
+
     //Variable for candelabra ability
     public bool running_away = false;
 
@@ -30,10 +33,15 @@ public class EnemyMovement : MonoBehaviour
     //Variable for ghost modifier
     public float ghost_speedRate = 1.003f;
 
+    //Experimental
+    //Variable for Knockback
+    //public float knockback_force = 5f;
+
     // Start is called before the first frame update
     void Start()
     {
         player = Player.transform;
+        //rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -72,9 +80,31 @@ public class EnemyMovement : MonoBehaviour
             speed *= ghost_speedRate;
             transform.position += directionTo.normalized * speed;
         }
-
-
     }
+
+    //Experimental Code for Knockback Implementation
+   /* private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("PlayerSlash"))
+        {
+            SlashScript slashScript = collision.gameObject.GetComponent<SlashScript>();
+
+            if (slashScript != null)
+            {
+                Vector3 directionTo = transform.position - player.position;
+                rb.AddForce(directionTo.normalized * knockback_force, ForceMode2D.Impulse);
+                knockbackDistance(0.2f);
+            }
+        }
+    }
+
+    private IEnumerator knockbackDistance(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        Debug.Log("Velocity Should Reset");
+        rb.velocity = Vector3.zero;
+    }*/
+
 
     // Method that handle's armor movement patterns
     // Armors will ... (Lunge at player?)
