@@ -220,6 +220,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6477052d3ee32574ba7c55607197efa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCam: {fileID: 558682175}
+  player: {fileID: 1221760081}
+  offset: {x: 0, y: 0, z: -1}
+  minBound: {x: 0, y: 0, z: -1}
+  maxBound: {x: 0, y: 0, z: -10}
+  followSpeed: 3
 --- !u!1 &1221760078
 GameObject:
   m_ObjectHideFlags: 0
