@@ -63,19 +63,19 @@ public class OptionsMenu : MonoBehaviour
         //If ESC is pressed, exit current menu
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Options_Opened)
+            if (Options_Opened && !Controls_Opened && !Video_Opened && !Audio_Opened)
             {
                 OptionsClose();
             }
-            if (Controls_Opened)
+            else if (Controls_Opened)
             {
                 ControlsClose();
             }
-            if (Video_Opened)
+            else if (Video_Opened)
             {
                 VideoClose();
             }
-            if (Audio_Opened)
+            else if (Audio_Opened)
             {
                 AudioClose();
             }
@@ -144,9 +144,9 @@ public class OptionsMenu : MonoBehaviour
         audioMixer.SetFloat("Volume", volume);
     }
 
+    //Constantly changing Resolution bugs it out a little, makes button unresponsive
     public void nextResolution()
     {
-        Debug.Log("Clicked Next");
         currentResIndex++;
         if (currentResIndex == resolutionOptions.Count)
         {
@@ -155,9 +155,9 @@ public class OptionsMenu : MonoBehaviour
         setResolution(currentResIndex);
     }
 
+    //Constantly changing Resolution bugs it out a little, makes button unresponsive
     public void prevResolution()
     {
-        Debug.Log("Clicked Prev");
         currentResIndex--;
         if(currentResIndex < 0)
         {
@@ -197,5 +197,21 @@ public class OptionsMenu : MonoBehaviour
     {
         QualitySettings.SetQualityLevel(qualityIndex);
         graphicsText.SetText(qualityOptions[qualityIndex]);
+    }
+
+    public void setScreen(int screenIndex)
+    {
+        if(screenIndex == 1)
+        {
+            Screen.fullScreen = true;
+        }
+        if(screenIndex == 0)
+        {
+            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+        }
+        if(screenIndex == 2)
+        {
+            Screen.fullScreenMode = FullScreenMode.Windowed;
+        }
     }
 }
