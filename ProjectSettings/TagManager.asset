@@ -8,6 +8,7 @@ TagManager:
   - PlayerSlash
   - PlayerCandleAttack
   - PlayerCandleShield
+  - PlayerSwordSpin
   layers:
   - Default
   - TransparentFX

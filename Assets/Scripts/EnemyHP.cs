@@ -37,6 +37,15 @@ public class EnemyHP : MonoBehaviour
                 Debug.Log("Enemy: " + ID + " | HP: " + HP);
             }
         }
+        if (collision.gameObject.CompareTag("PlayerSwordSpin") && !invincible)
+        {
+            SwordSpinScript spinScript = collision.gameObject.GetComponent<SwordSpinScript>();
+
+            if(spinScript != null){
+                TakeDamage(spinScript.spin_dmg, spinScript.spin_attack_duration);
+                Debug.Log("Enemy: " + ID + " | HP: " + HP);
+            }
+        }
     }
 
     private void TakeDamage(int dmg, float duration){
