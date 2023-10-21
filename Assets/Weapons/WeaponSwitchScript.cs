@@ -28,10 +28,10 @@ public class WeaponSwitchScript : MonoBehaviour
     private void Switch_Weapon(){
         switch(current_weapon_equipped){
             case "candelabra":
-                current_weapon_equipped = "axe";
+                current_weapon_equipped = "sword";
                 img_renderer.sprite = axe_img;
                 break;
-            case "axe":
+            case "sword":
                 current_weapon_equipped = "candelabra";
                 img_renderer.sprite = candelabra_img;
                 break;

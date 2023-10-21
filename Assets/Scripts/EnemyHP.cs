@@ -27,6 +27,16 @@ public class EnemyHP : MonoBehaviour
                 Debug.Log("Enemy: " + ID + " | HP: " + HP);
             }
         }
+        if (collision.gameObject.CompareTag("PlayerCandleAttack") && !invincible)
+        {
+            CandleAttackScript candleScript = collision.gameObject.GetComponent<CandleAttackScript>();
+
+            if(candleScript != null){
+                TakeDamage(candleScript.attack_dmg, candleScript.attack_duration);
+                StartCoroutine(TakeBurnDamage(candleScript.burn_dmg, candleScript.burn_duration, candleScript.burn_cooldown));
+                Debug.Log("Enemy: " + ID + " | HP: " + HP);
+            }
+        }
     }
 
     private void TakeDamage(int dmg, float duration){
@@ -46,6 +56,19 @@ public class EnemyHP : MonoBehaviour
     private IEnumerator DamageCooldown(float duration){
         yield return new WaitForSeconds(duration);
         invincible = false;
+    }
+
+    private IEnumerator TakeBurnDamage(int dmg, float duration, float cooldown){
+        for(float i = 0;i < duration;i += cooldown){
+            yield return new WaitForSeconds(cooldown);
+            HP -= dmg;
+            if(HP <= 0){
+                EnemyDeath();
+            }
+            else{
+                EnemyHurt(dmg);
+            }
+        }
     }
 
     private void EnemyDeath(){

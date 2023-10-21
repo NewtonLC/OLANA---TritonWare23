@@ -7,7 +7,7 @@ public class SlashScript : MonoBehaviour
     //Variables for handling attacks
     public float slash_duration = 0.1f;
     private float slash_cooldown = 0.5f;
-    private float slash_distance_to_player = 1.6f;
+    private float slash_distance_to_player = 1.2f;
     private bool can_slash = true;
     public int slash_dmg;
 
@@ -25,15 +25,15 @@ public class SlashScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) && string.Equals(WeaponSwitchScript.current_weapon_equipped, "axe")){
-            //Swing axe
+        if(Input.GetMouseButtonDown(0) && string.Equals(WeaponSwitchScript.current_weapon_equipped, "sword")){
+            //Swing sword
             Slash_Attack();
         }
     }
 
     private void Slash_Attack(){
         if (can_slash){
-            Debug.Log("Axe slash!");
+            Debug.Log("Sword slash!");
             can_slash = false;
             Face_Cursor();
             StartCoroutine(Slash_Duration());
@@ -48,14 +48,13 @@ public class SlashScript : MonoBehaviour
         // Get the mouse position in world space.
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        // Calculate the direction from the sprite to the mouse.
-        Vector3 direction = mousePosition - transform.position;
-
-        // Calculate the angle in degrees.
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        // Rotate the sprite to face the mouse.
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        //Turns the sprite left or right, depending on the mouse's position
+        if(mousePosition.x < transform.position.x){
+            transform.rotation = Quaternion.Euler(new Vector3(0,0,180));        //Turn to face the left
+        }
+        else{
+            transform.rotation = Quaternion.Euler(new Vector3(0,0,0));          //Turn to face the right
+        }
 
         Vector3 newPosition = transform.position + (transform.right * slash_distance_to_player);
         transform.position = newPosition;

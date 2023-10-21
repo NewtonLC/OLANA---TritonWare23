@@ -18,6 +18,7 @@ public class EnemyMovement : MonoBehaviour
 
     //Variable for candelabra ability
     public bool running_away = false;
+    private float run_away_duration = 2;
 
     //Variable for knight's lunge
     public float lunge_distance;
@@ -58,6 +59,18 @@ public class EnemyMovement : MonoBehaviour
     {
         player = Player.transform;
         //rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnTriggerStay2D(Collider2D collision){
+        if((collision.gameObject.CompareTag("PlayerCandleShield"))){
+            StartCoroutine(Run_Away());
+        }
+    }
+
+    private IEnumerator Run_Away(){
+        running_away = true;
+        yield return new WaitForSeconds(run_away_duration);
+        running_away = false;
     }
 
     // Update is called once per frame
