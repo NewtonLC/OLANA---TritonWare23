@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+    public static bool Options_Opened = false;
+    public static bool other_OptionsOpened = false;
 
     //Put PauseMenu GameObject
     public GameObject Pause_MenuUI;
@@ -15,14 +17,28 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameIsPaused)
+            if (GameIsPaused && !Options_Opened && !other_OptionsOpened)
             {
                 Resume();
+            }
+            else if(GameIsPaused && Options_Opened && !other_OptionsOpened)
+            {
+                Options_Opened = false;
+            }
+            else if(GameIsPaused && other_OptionsOpened)
+            {
+                other_OptionsOpened = false;
             }
             else
             {
                 Pause();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            Debug.Log("Za Warudo");
+            Time.timeScale = 0f;
         }
     }
 
@@ -40,6 +56,21 @@ public class PauseMenu : MonoBehaviour
         Pause_MenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+    }
+
+    public void OptionsOpen()
+    {
+        Options_Opened = true;
+    }
+
+    public void OptionsClose()
+    {
+        Options_Opened = false;
+    }
+
+    public void otherOptionsOpen()
+    {
+        other_OptionsOpened = true;
     }
 
     public void MainMenu()
