@@ -8,7 +8,7 @@ public class SlashScript : MonoBehaviour
     public float slash_duration = 0.1f;
     private float slash_cooldown = 0.5f;
     private float slash_distance_to_player = 1.2f;
-    private bool can_slash = true;
+    public bool can_slash = true;
     public int slash_dmg;
 
     public Color slash_active;

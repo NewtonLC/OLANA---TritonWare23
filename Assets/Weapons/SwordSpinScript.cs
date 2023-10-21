@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class SwordSpinScript : MonoBehaviour
 {
+
     //Variables for handling attacks
     public int spin_dmg;
     public float spin_attack_duration;         //How often enemies take damage while in the attack
     public float spin_duration;
     public float spin_cooldown;
-    private bool can_spin = true;
+    public bool can_spin = true;
 
     //Objects for handling the spin sprite
     public Color spin_active;

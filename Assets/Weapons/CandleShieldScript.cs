@@ -7,7 +7,7 @@ public class CandleShieldScript : MonoBehaviour
     //Variables for handling shield ability
     public float shield_duration;
     public float shield_cooldown;
-    private bool can_shield = true;
+    public bool can_shield = true;
 
     //Objects for handling the shield sprite
     public Color shield_active;

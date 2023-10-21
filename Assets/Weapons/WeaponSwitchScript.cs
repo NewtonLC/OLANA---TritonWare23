@@ -5,16 +5,24 @@ using UnityEngine.UI;
 
 public class WeaponSwitchScript : MonoBehaviour
 {
-    public Sprite axe_img;
-    public Sprite candelabra_img;
-    public Image img_renderer;
+    [SerializeField] private Image equippedIcon;
+    [SerializeField] private Image sheathedIcon;
+    [SerializeField] private Image basicAttackIcon;
+    [SerializeField] private Image specialAbilityIcon;
+
+    [SerializeField] private Sprite candelabraIcon;
+    [SerializeField] private Sprite swordIcon;
+    [SerializeField] private Sprite candelabraBasicAttackIcon;
+    [SerializeField] private Sprite candelabraSpecialAbilityIcon;
+    [SerializeField] private Sprite swordBasicAttackIcon;
+    [SerializeField] private Sprite swordSpecialAbilityIcon;
 
     static public string current_weapon_equipped = "candelabra";
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -30,15 +38,24 @@ public class WeaponSwitchScript : MonoBehaviour
         switch(current_weapon_equipped){
             case "candelabra":
                 current_weapon_equipped = "sword";
-                img_renderer.sprite = axe_img;
+                equippedIcon.sprite = swordIcon;
+                sheathedIcon.sprite = candelabraIcon;
+                basicAttackIcon.sprite = swordBasicAttackIcon;
+                specialAbilityIcon.sprite = swordSpecialAbilityIcon;
                 break;
             case "sword":
                 current_weapon_equipped = "candelabra";
-                img_renderer.sprite = candelabra_img;
+                equippedIcon.sprite = candelabraIcon;
+                sheathedIcon.sprite = swordIcon;
+                basicAttackIcon.sprite = candelabraBasicAttackIcon;
+                specialAbilityIcon.sprite = candelabraSpecialAbilityIcon;
                 break;
             default:
                 current_weapon_equipped = "candelabra";
-                img_renderer.sprite = candelabra_img;
+                equippedIcon.sprite = candelabraIcon;
+                sheathedIcon.sprite = swordIcon;
+                basicAttackIcon.sprite = candelabraBasicAttackIcon;
+                specialAbilityIcon.sprite = candelabraSpecialAbilityIcon;
                 break;
         }
     }

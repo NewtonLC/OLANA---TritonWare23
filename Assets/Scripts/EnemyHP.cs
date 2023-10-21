@@ -11,7 +11,7 @@ public class EnemyHP : MonoBehaviour
     //To prevent the enemy from getting damaged on every frame in which it collides with the player's attack
     private bool invincible = false;
 
-    // For accessing isStompActive in EnemyMovement script
+    // For accessing onGround boolean in EnemyMovement script
     [SerializeField] private EnemyMovement gargoyleMovement;
 
     void Start()

@@ -8,7 +8,7 @@ public class CandleAttackScript : MonoBehaviour
     public float attack_duration = 0.1f;
     private float attack_cooldown = 0.5f;
     private float attack_distance_to_player = 1f;
-    private bool can_attack = true;
+    public bool can_attack = true;
     public int attack_dmg;
 
     //Variables for handling burn DoT
