@@ -14,7 +14,7 @@ public class cameraFollowPlayer : MonoBehaviour
 
     void Start()
     {
-        transform.position = player.position;
+        //transform.position = player.position;
         maxBound.z = -10;
         minBound.z = -1;
         
