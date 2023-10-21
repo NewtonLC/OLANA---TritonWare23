@@ -103,7 +103,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: knightstrike-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 10
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86813c036d2703f408fab3424e7a0a03
+      internalID: -1635649238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knightstrike-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 10
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a88dfcb559d1a45468cfe535ed3362e4
+      internalID: 549189271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knightstrike-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 10
+        width: 38
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d66b7fa7ab492db46b94b5712b820c98
+      internalID: 1939520671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knightstrike-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 10
+        width: 36
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 194ef380c88dbec459107e1b230b24f3
+      internalID: 1496732762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knightstrike-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 10
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea5eb11cde5e50c4e953388a7606683f
+      internalID: -1535832182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knightstrike-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 10
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a6d7c397ad98564f830b4ccd1c868f6
+      internalID: -1148085659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +240,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      knightstrike-Sheet_2: 1939520671
+      knightstrike-Sheet_5: -1148085659
+      knightstrike-Sheet_3: 1496732762
+      knightstrike-Sheet_4: -1535832182
+      knightstrike-Sheet_1: 549189271
+      knightstrike-Sheet_0: -1635649238
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
