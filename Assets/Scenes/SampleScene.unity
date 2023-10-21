@@ -4301,6 +4301,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3712078245144075347, guid: 426aa4a5ea4c0674bb2fb3069804b4ac, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3712078245144075347, guid: 426aa4a5ea4c0674bb2fb3069804b4ac, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3712078245144075347, guid: 426aa4a5ea4c0674bb2fb3069804b4ac, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 3712078245144075347, guid: 426aa4a5ea4c0674bb2fb3069804b4ac, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.90625
+      objectReference: {fileID: 0}
     - target: {fileID: 3712078245144075353, guid: 426aa4a5ea4c0674bb2fb3069804b4ac, type: 3}
       propertyPath: m_Name
       value: GhostObject
@@ -4353,6 +4369,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3712078245144075358, guid: 426aa4a5ea4c0674bb2fb3069804b4ac, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -566158137, guid: e9b99db1b3bcaa54b847c9ba6c0396ac, type: 3}
     - target: {fileID: 3712078245144075359, guid: 426aa4a5ea4c0674bb2fb3069804b4ac, type: 3}
       propertyPath: speed
       value: 0.04
