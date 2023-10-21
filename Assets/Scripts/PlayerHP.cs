@@ -5,13 +5,14 @@ using UnityEngine;
 public class PlayerHP : MonoBehaviour
 {
     public int HP;
+    [SerializeField] Healthbar healthbar;
     public bool invincible = false;
     public float invincibility_duration = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        healthbar.setMaxHealth(HP);
     }
 
     // Update is called once per frame
@@ -36,6 +37,7 @@ public class PlayerHP : MonoBehaviour
     private void TakeDamage(int dmg){
         if (!invincible){
             HP -= dmg;
+            healthbar.setHealth(HP);
 
             invincible = true;
             StartCoroutine(RemoveInvincibility());

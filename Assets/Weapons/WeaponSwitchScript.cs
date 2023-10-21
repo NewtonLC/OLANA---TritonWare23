@@ -22,6 +22,7 @@ public class WeaponSwitchScript : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.R)){
             Switch_Weapon();
+            Debug.Log("switched weapon!");
         }
     }
 
