@@ -111,13 +111,13 @@ MonoBehaviour:
   lunge_startup: 0
   lunge_cooldown: 0
   ghost_speedRate: 1.003
-  gargoyleHorizontalSpeed: 0
-  gargoyleVeritcalSpeed: 0
-  gargoyleHeightAbovePlayer: 0
-  stompSpeed: 0
-  stompChargeTime: 0
-  timeOnGround: 0
-  stompCooldownTime: 0
+  gargoyleHorizontalSpeed: 0.06
+  gargoyleVeritcalSpeed: 0.03
+  gargoyleHeightAbovePlayer: 4
+  stompSpeed: 0.15
+  stompChargeTime: 1
+  timeOnGround: 2
+  stompCooldownTime: 2
 --- !u!114 &6267050115297827420
 MonoBehaviour:
   m_ObjectHideFlags: 0

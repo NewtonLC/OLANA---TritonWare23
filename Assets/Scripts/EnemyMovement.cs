@@ -45,6 +45,7 @@ public class EnemyMovement : MonoBehaviour
     private bool stompIsCharging = false;
     [SerializeField] private float stompChargeTime;
     private bool stompMovingDown = false;
+    public bool onGround = false;
     [SerializeField] private float timeOnGround;
     private bool stompMovingUp = false;
     private bool stompOnCooldown = false;
@@ -57,6 +58,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Player = GameObject.FindWithTag("Player");
         player = Player.transform;
         //rb = GetComponent<Rigidbody2D>();
     }
@@ -196,12 +198,19 @@ public class EnemyMovement : MonoBehaviour
 
         if (!stompIsActive)
         {
-            // Move toward a certain height above the player's position
-            transform.position += Vector3.Scale(Vector3.Scale((directionTo + flyHeight).normalized, horizontalSpeed), verticalSpeed);
-            // Initiate stomp if above player and the ability is not on cooldown
-            if ((Mathf.Abs(transform.position.y) <= Mathf.Abs((float)(player.position.y + flyHeight.y + 0.1))) && !stompOnCooldown)
+            if (running_away)
             {
-                StartCoroutine(gargoyleStomp());
+                transform.position -= Vector3.Scale(Vector3.Scale((directionTo + flyHeight).normalized, horizontalSpeed), verticalSpeed);
+            }
+            else
+            {
+                // Move toward a certain height above the player's position
+                transform.position += Vector3.Scale(Vector3.Scale((directionTo + flyHeight).normalized, horizontalSpeed), verticalSpeed);
+                // Initiate stomp if above player and the ability is not on cooldown
+                if ((Mathf.Abs(transform.position.y) <= Mathf.Abs((float)(player.position.y + flyHeight.y + 0.1))) && !stompOnCooldown)
+                {
+                    StartCoroutine(gargoyleStomp());
+                }
             }
         }
         else
@@ -232,7 +241,9 @@ public class EnemyMovement : MonoBehaviour
         stompMovingDown = true;
         yield return new WaitForSeconds(stompDuration());
         stompMovingDown = false;
+        onGround = true;
         yield return new WaitForSeconds(timeOnGround);
+        onGround = false;
         stompMovingUp = true;
         yield return new WaitForSeconds(stompDuration());
         stompMovingUp = false;

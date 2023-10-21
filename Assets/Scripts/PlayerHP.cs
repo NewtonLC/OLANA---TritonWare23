@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerHP : MonoBehaviour
 {
     public int HP;
-    [SerializeField] Healthbar healthbar;
+    [SerializeField] private Healthbar healthbar;
     public bool invincible = false;
     public float invincibility_duration = 1;
 
