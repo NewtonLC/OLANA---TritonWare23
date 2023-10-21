@@ -3494,6 +3494,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6267050115297827419, guid: aa3c2db536bbbb24995a39d08378df0b, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 482626660}
+    - target: {fileID: 6267050115297827419, guid: aa3c2db536bbbb24995a39d08378df0b, type: 3}
+      propertyPath: stompSpeed
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6267050115297827419, guid: aa3c2db536bbbb24995a39d08378df0b, type: 3}
+      propertyPath: timeOnGround
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6267050115297827419, guid: aa3c2db536bbbb24995a39d08378df0b, type: 3}
+      propertyPath: stompChargeTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6267050115297827419, guid: aa3c2db536bbbb24995a39d08378df0b, type: 3}
+      propertyPath: stompCooldownTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6267050115297827419, guid: aa3c2db536bbbb24995a39d08378df0b, type: 3}
+      propertyPath: gargoyleVeritcalSpeed
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 6267050115297827419, guid: aa3c2db536bbbb24995a39d08378df0b, type: 3}
+      propertyPath: gargoyleHorizontalSpeed
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 6267050115297827419, guid: aa3c2db536bbbb24995a39d08378df0b, type: 3}
+      propertyPath: gargoyleHeightAbovePlayer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6267050115297827421, guid: aa3c2db536bbbb24995a39d08378df0b, type: 3}
       propertyPath: m_Name
       value: GargoyleObject
