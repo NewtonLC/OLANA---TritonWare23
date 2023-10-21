@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - PlayerSlash
+  - PlayerCandleAttack
+  - PlayerCandleShield
   layers:
   - Default
   - TransparentFX
