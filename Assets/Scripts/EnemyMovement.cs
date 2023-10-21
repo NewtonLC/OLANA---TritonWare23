@@ -33,6 +33,22 @@ public class EnemyMovement : MonoBehaviour
     //Variable for ghost modifier
     public float ghost_speedRate = 1.003f;
 
+    // Variables for gargoyle movement
+    [SerializeField] private float gargoyleHorizontalSpeed;
+    [SerializeField] private float gargoyleVeritcalSpeed;
+    [SerializeField] private float gargoyleHeightAbovePlayer;
+
+    // Variables for gargoyle stomp
+    private bool stompIsActive = false;
+    [SerializeField] private float stompSpeed;
+    private bool stompIsCharging = false;
+    [SerializeField] private float stompChargeTime;
+    private bool stompMovingDown = false;
+    [SerializeField] private float timeOnGround;
+    private bool stompMovingUp = false;
+    private bool stompOnCooldown = false;
+    [SerializeField] private float stompCooldownTime;
+
     //Experimental
     //Variable for Knockback
     //public float knockback_force = 5f;
@@ -159,8 +175,72 @@ public class EnemyMovement : MonoBehaviour
     // Method that handle's gargoyle movement patterns
     // Gargoyles will ... (Begin in a "flying" state until they reach the player OR take damage. Then, move normally)
     private void GargoyleMovement(){
+        Vector3 directionTo = player.position - transform.position;
+
+        Vector3 flyHeight = new Vector3(0, gargoyleHeightAbovePlayer, 0);
+        Vector3 horizontalSpeed = new Vector3(gargoyleHorizontalSpeed, 1, 1);
+        Vector3 verticalSpeed = new Vector3(1, gargoyleVeritcalSpeed, 1);
+
+        if (!stompIsActive)
+        {
+            // Move toward a certain height above the player's position
+            transform.position += Vector3.Scale(Vector3.Scale((directionTo + flyHeight).normalized, horizontalSpeed), verticalSpeed);
+            // Initiate stomp if above player and the ability is not on cooldown
+            if ((Mathf.Abs(transform.position.y) <= Mathf.Abs((float)(player.position.y + flyHeight.y + 0.1))) && !stompOnCooldown)
+            {
+                StartCoroutine(gargoyleStomp());
+            }
+        }
+        else
+        {
+            if (!stompIsCharging)
+            {
+                if (stompMovingDown)
+                {
+                    transform.position += Vector3.down * stompSpeed;
+                }
+                else if (stompMovingUp)
+                {
+                    transform.position += Vector3.up * stompSpeed;
+                }
+            }
+        }
+
 
     }
+
+    // Manages the time and respective booleans when a gargoyle is carrying out a stomp
+    private IEnumerator gargoyleStomp()
+    {
+        stompIsActive = true;
+        stompIsCharging = true;
+        yield return new WaitForSeconds(stompChargeTime);
+        stompIsCharging = false;
+        stompMovingDown = true;
+        yield return new WaitForSeconds(stompDuration());
+        stompMovingDown = false;
+        yield return new WaitForSeconds(timeOnGround);
+        stompMovingUp = true;
+        yield return new WaitForSeconds(stompDuration());
+        stompMovingUp = false;
+        stompIsActive = false;
+        StartCoroutine(gargoyleStompCooldown());
+    }
+
+    // Returns the distance divided by the speed divided by the number of frames per second
+    private float stompDuration()
+    {
+        return (gargoyleHeightAbovePlayer / stompSpeed / 50);
+    }
+
+    // Manages the time and boolean when a gargoyle's stomp ability is on cooldown
+    private IEnumerator gargoyleStompCooldown()
+    {
+        stompOnCooldown = true;
+        yield return new WaitForSeconds(stompCooldownTime);
+        stompOnCooldown = false;
+    }
+
 
     // Method that handle's vampires' movement patterns
     // Vampires will ... (move directly at player?)
