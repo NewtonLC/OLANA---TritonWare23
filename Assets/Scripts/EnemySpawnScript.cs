@@ -17,10 +17,10 @@ public class EnemySpawnScript : MonoBehaviour
     public GameObject gargoyle_prefab;
     public GameObject player;
 
-    private float x_left_bound = -17;    // Enemies can spawn anywhere from x_left_bound to x_right_bound
-    private float x_right_bound = 17;    
-    private float y_upper_bound = 4;     // Enemies can spawn anywhere from y_upper_bound to y_lower_bound
-    private float y_lower_bound = -6;     
+    private float x_left_bound = -28;    // Enemies can spawn anywhere from x_left_bound to x_right_bound
+    private float x_right_bound = 28;    
+    private float y_upper_bound = 3;     // Enemies can spawn anywhere from y_upper_bound to y_lower_bound
+    private float y_lower_bound = -14;     
 
     // Update is called once per frame
     void Update()
@@ -30,13 +30,17 @@ public class EnemySpawnScript : MonoBehaviour
             StartCoroutine(SpawnWaveEnemies());
             intermission_active = true;
         }
+        if(intermission_active && num_enemies_killed == num_enemies_spawned){
+            intermission_active = false;
+        }
+        Debug.Log(num_enemies_spawned + " " + num_enemies_killed);
     }
 
     private IEnumerator SpawnWaveEnemies(){
+        num_enemies_spawned += (current_wave*2)+5;
         for(int i = 0;i < (current_wave*2)+5;i++){
             yield return new WaitForSeconds(base_enemy_spawn_interval * Random.Range(0.7f, 1.3f));
             Spawn();
-            num_enemies_spawned++;
         }
     }
 

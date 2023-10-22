@@ -69,11 +69,13 @@ public class SlashScript : MonoBehaviour
     private IEnumerator Slash_Duration(){
         //Show the sword and turn on the collider
         slash_collider.enabled = true;
+        slash_renderer.color = slash_active;
         yield return new WaitForSeconds(slash_duration);
         //Hide the sword and turn off the collider
         animator.SetBool("isAttack", false);
         Debug.Log("Third" + animator.GetBool("isAttack"));
         slash_collider.enabled = false;
+        slash_renderer.color = slash_inactive;
     }
 
     private IEnumerator Slash_Cooldown(){
