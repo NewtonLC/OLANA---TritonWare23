@@ -11,13 +11,25 @@ public class PlayerMovement : MonoBehaviour
     private KeyCode[] MovementKeys = {KeyCode.W,KeyCode.A,KeyCode.S,KeyCode.D};
 
     public Animator animator;
+    private float moveInput;
 
     void FixedUpdate()
     {
+        moveInput = Input.GetAxis("Horizontal");
         //Code that lowers speed if no movement keys are pressed, so the player stops smoothly.
-        if(is_Movement_Key_Pressed()){
+        if (is_Movement_Key_Pressed()){
             playerSpeed = MAX_PLAYER_SPEED;
             animator.SetBool("isWalkin", true);
+            if (moveInput > 0)
+            {
+                // Face right
+                transform.localScale = new Vector2(-2, 2);
+            }
+            else if (moveInput < 0)
+            {
+                // Face left
+                transform.localScale = new Vector2(2, 2);
+            }
         }
         else{
             playerSpeed -= slowRate;
