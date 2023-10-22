@@ -19,6 +19,8 @@ public class WeaponSwitchScript : MonoBehaviour
 
     static public string current_weapon_equipped = "candelabra";
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,9 @@ public class WeaponSwitchScript : MonoBehaviour
     private void Switch_Weapon(){
         switch(current_weapon_equipped){
             case "candelabra":
+                
+                animator.SetBool("SwordEquipped", true);
+                Debug.Log(animator.GetBool("SwordEquipped"));
                 current_weapon_equipped = "sword";
                 equippedIcon.sprite = swordIcon;
                 sheathedIcon.sprite = candelabraIcon;
@@ -44,6 +49,8 @@ public class WeaponSwitchScript : MonoBehaviour
                 specialAbilityIcon.sprite = swordSpecialAbilityIcon;
                 break;
             case "sword":
+                animator.SetBool("SwordEquipped", false);
+                Debug.Log(animator.GetBool("SwordEquipped"));
                 current_weapon_equipped = "candelabra";
                 equippedIcon.sprite = candelabraIcon;
                 sheathedIcon.sprite = swordIcon;
@@ -51,6 +58,7 @@ public class WeaponSwitchScript : MonoBehaviour
                 specialAbilityIcon.sprite = candelabraSpecialAbilityIcon;
                 break;
             default:
+                animator.SetBool("SwordEquipped", false);
                 current_weapon_equipped = "candelabra";
                 equippedIcon.sprite = candelabraIcon;
                 sheathedIcon.sprite = swordIcon;

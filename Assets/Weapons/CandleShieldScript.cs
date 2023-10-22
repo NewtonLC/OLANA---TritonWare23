@@ -15,6 +15,8 @@ public class CandleShieldScript : MonoBehaviour
     public SpriteRenderer shield_renderer;
     public CircleCollider2D shield_collider;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +34,8 @@ public class CandleShieldScript : MonoBehaviour
 
     private void Candle_Shield(){
         if (can_shield){
-            Debug.Log("Shield!");
             can_shield = false;
+            animator.Play("Player_Candelabra_Shield", -1, 0f);
             StartCoroutine(Shield_Duration());
         }
     }

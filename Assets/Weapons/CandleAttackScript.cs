@@ -21,6 +21,8 @@ public class CandleAttackScript : MonoBehaviour
     public SpriteRenderer attack_renderer;
     public CircleCollider2D attack_collider;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,8 @@ public class CandleAttackScript : MonoBehaviour
     private void Candle_Attack(){
         if (can_attack){
             Debug.Log("Candelabra attack!");
+            animator.SetBool("isAttack", true);
+            //animator.Play("Player_Candelabra_Attack", -1, 0f);
             can_attack = false;
             Face_Cursor();
             StartCoroutine(Attack_Duration());
@@ -73,6 +77,7 @@ public class CandleAttackScript : MonoBehaviour
         yield return new WaitForSeconds(attack_duration);
         //Hide the sword and turn off the collider
         attack_renderer.color = attack_inactive;
+        animator.SetBool("isAttack", false);
         attack_collider.enabled = false;
     }
 

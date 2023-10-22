@@ -18,6 +18,8 @@ public class SwordSpinScript : MonoBehaviour
     public SpriteRenderer spin_renderer;
     public CircleCollider2D spin_collider;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,7 @@ public class SwordSpinScript : MonoBehaviour
         if (can_spin){
             Debug.Log("Spin!");
             can_spin = false;
+            animator.Play("Player_Sword_Special", -1, 0f);
             StartCoroutine(Spin_Duration());
             StartCoroutine(Spin_Cooldown());
         }
@@ -46,6 +49,7 @@ public class SwordSpinScript : MonoBehaviour
         //Show the sword and turn on the collider
         spin_renderer.color = spin_active;
         spin_collider.enabled = true;
+        animator.SetBool("isSpecial", true);
         yield return new WaitForSeconds(spin_duration);
         //Hide the sword and turn off the collider
         spin_renderer.color = spin_inactive;
@@ -53,6 +57,7 @@ public class SwordSpinScript : MonoBehaviour
     }
 
     private IEnumerator Spin_Cooldown(){
+        animator.SetBool("isSpecial", false);
         yield return new WaitForSeconds(spin_cooldown);
         can_spin = true;
     }

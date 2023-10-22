@@ -16,6 +16,8 @@ public class SlashScript : MonoBehaviour
     public SpriteRenderer slash_renderer;
     public PolygonCollider2D slash_collider;
 
+    public Animator animator;
+
     void Start(){
         // Get the SpriteRenderer component attached to this GameObject.
         slash_renderer = GetComponent<SpriteRenderer>();
@@ -27,7 +29,11 @@ public class SlashScript : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0) && string.Equals(WeaponSwitchScript.current_weapon_equipped, "sword")){
             //Swing sword
+            animator.SetBool("isAttack", true);
+            //animator.Play("Player_Sword_Attack", -1, 0f);
+            Debug.Log("First" +animator.GetBool("isAttack"));
             Slash_Attack();
+            Debug.Log("Second" + animator.GetBool("isAttack"));
         }
     }
 
@@ -62,11 +68,11 @@ public class SlashScript : MonoBehaviour
 
     private IEnumerator Slash_Duration(){
         //Show the sword and turn on the collider
-        slash_renderer.color = slash_active;
         slash_collider.enabled = true;
         yield return new WaitForSeconds(slash_duration);
         //Hide the sword and turn off the collider
-        slash_renderer.color = slash_inactive;
+        animator.SetBool("isAttack", false);
+        Debug.Log("Third" + animator.GetBool("isAttack"));
         slash_collider.enabled = false;
     }
 
