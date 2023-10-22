@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3712078245144075352}
   - component: {fileID: 3712078245144075347}
   - component: {fileID: 3712078245144075356}
+  - component: {fileID: -8289462273932842804}
   m_Layer: 0
   m_Name: GhostObject
   m_TagString: Enemy
@@ -101,9 +102,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: ghost
+  default_speed: 0.04
   speed: 0.04
   Player: {fileID: 0}
   player: {fileID: 0}
+  enemyHPScript: {fileID: 3712078245144075352}
   running_away: 0
   lunge_distance: 0
   lunge_length: 0
@@ -116,6 +119,7 @@ MonoBehaviour:
   gargoyleHeightAbovePlayer: 0
   stompSpeed: 0
   stompChargeTime: 0
+  onGround: 0
   timeOnGround: 0
   stompCooldownTime: 0
 --- !u!114 &3712078245144075352
@@ -133,6 +137,10 @@ MonoBehaviour:
   HP: 2
   Enemy_dmg: 1
   ID: ghost
+  is_spawning_in: 0
+  enemyAnimator: {fileID: -8289462273932842804}
+  enemy_collider: {fileID: 3712078245144075347}
+  gargoyleMovement: {fileID: 0}
 --- !u!60 &3712078245144075347
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -182,3 +190,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!95 &-8289462273932842804
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3712078245144075353}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11b215e5f9153e2409798f1b5663a430, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

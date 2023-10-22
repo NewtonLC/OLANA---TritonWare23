@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8480876951467950105}
   - component: {fileID: 8480876951467950098}
   - component: {fileID: 8480876951467950109}
+  - component: {fileID: -5555468473102381094}
   m_Layer: 0
   m_Name: ArmorObject
   m_TagString: Enemy
@@ -101,9 +102,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: armor
+  default_speed: 0.03
   speed: 0.03
+  enemyAnimator: {fileID: -5555468473102381094}
   Player: {fileID: 0}
   player: {fileID: 0}
+  enemyHPScript: {fileID: 8480876951467950105}
   running_away: 0
   lunge_distance: 3
   lunge_length: 4
@@ -116,6 +120,7 @@ MonoBehaviour:
   gargoyleHeightAbovePlayer: 0
   stompSpeed: 0
   stompChargeTime: 0
+  onGround: 0
   timeOnGround: 0
   stompCooldownTime: 0
 --- !u!114 &8480876951467950105
@@ -133,6 +138,10 @@ MonoBehaviour:
   HP: 4
   Enemy_dmg: 1
   ID: armor
+  is_spawning_in: 0
+  enemyAnimator: {fileID: -5555468473102381094}
+  enemy_collider: {fileID: 8480876951467950098}
+  gargoyleMovement: {fileID: 0}
 --- !u!60 &8480876951467950098
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -199,3 +208,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!95 &-5555468473102381094
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8480876951467950104}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2821f44ca0e1e4246a749b8e6cd4b7c3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -7,6 +7,10 @@ public class EnemyHP : MonoBehaviour
     public int HP;
     public int Enemy_dmg;
     public string ID;
+    public bool is_spawning_in;
+
+    public Animator enemyAnimator;
+    public PolygonCollider2D enemy_collider;
 
     //To prevent the enemy from getting damaged on every frame in which it collides with the player's attack
     private bool invincible = false;
@@ -17,12 +21,16 @@ public class EnemyHP : MonoBehaviour
     void Start()
     {
         gargoyleMovement = this.GetComponent<EnemyMovement>();
+        StartCoroutine(SpawnEnemyIn());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
+    private IEnumerator SpawnEnemyIn(){
+        enemy_collider.enabled = false;
+        is_spawning_in = true;
+        yield return new WaitForSeconds(1.2f);
+        enemy_collider.enabled = true;
+        is_spawning_in = false;
+        enemyAnimator.SetBool("enemySpawned", true);
     }
 
     private void OnTriggerStay2D(Collider2D collision) {
@@ -96,7 +104,10 @@ public class EnemyHP : MonoBehaviour
 
     private void EnemyDeath(){
         Debug.Log("Enemy " + ID + " died");
-        Destroy(gameObject);
+        enemy_collider.enabled = false;
+        enemyAnimator.SetBool("enemyDead", true);
+        EnemySpawnScript.num_enemies_killed++;
+        Destroy(gameObject, 1);
     }
 
     private void EnemyHurt(int dmg){
