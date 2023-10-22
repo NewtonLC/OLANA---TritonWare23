@@ -103,7 +103,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: sword attack_3
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 0
+        width: 20
+        height: 47
+      alignment: 9
+      pivot: {x: 0.47, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 080a22f92b2431c4b8fe9aa176a8cf7d
+      internalID: -261194262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword attack_4
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 0
+        width: 21
+        height: 45
+      alignment: 9
+      pivot: {x: 0.47, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a81900c505f6d246b96e78bfd410d2e
+      internalID: 2110996766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword attack_5
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 0
+        width: 41
+        height: 45
+      alignment: 9
+      pivot: {x: 0.7493673, y: 0.35298777}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc34c248ceef20f41ad7257af8aa287a
+      internalID: -200089055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword attack_6
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 0
+        width: 37
+        height: 40
+      alignment: 9
+      pivot: {x: 0.6787984, y: 0.40978813}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e35bed3544a01429df0165d27456e3
+      internalID: -1430253012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword attack_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 0
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced06ed78e8ff464ca998b213d7ef2eb
+      internalID: 2072291163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword attack_1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 0
+        width: 31
+        height: 31
+      alignment: 9
+      pivot: {x: 0.6164027, y: 0.5000002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e7343e6e2fc6640b4020bb6d68eaaa
+      internalID: 2098429711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword attack_2
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 0
+        width: 26
+        height: 33
+      alignment: 9
+      pivot: {x: 0.60409075, y: 0.49088785}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bcf86ef40d857249acfa7a25462cdfc
+      internalID: -1299353895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +261,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sword attack_6: -1430253012
+      sword attack_9: -629875888
+      sword attack_1: 2098429711
+      sword attack_2: -1299353895
+      sword attack_0: 2072291163
+      sword attack_3: -261194262
+      sword attack_4: 2110996766
+      sword attack_5: -200089055
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

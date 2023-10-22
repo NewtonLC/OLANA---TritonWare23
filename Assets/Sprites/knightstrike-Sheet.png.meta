@@ -124,6 +124,10 @@ TextureImporter:
         y: 0
         width: 50
         height: 50
+        x: 7
+        y: 10
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,6 +137,8 @@ TextureImporter:
       bones: []
       spriteID: 045b7f4f8a428964b89decb21bc953d7
       internalID: 1508802902
+      spriteID: 86813c036d2703f408fab3424e7a0a03
+      internalID: -1635649238
       vertices: []
       indices: 
       edges: []
@@ -145,6 +151,10 @@ TextureImporter:
         y: 0
         width: 50
         height: 50
+        x: 58
+        y: 10
+        width: 27
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,6 +164,8 @@ TextureImporter:
       bones: []
       spriteID: f6fe081b5832ad341893086bc93c75c3
       internalID: 1389634879
+      spriteID: a88dfcb559d1a45468cfe535ed3362e4
+      internalID: 549189271
       vertices: []
       indices: 
       edges: []
@@ -166,6 +178,10 @@ TextureImporter:
         y: 0
         width: 50
         height: 50
+        x: 112
+        y: 10
+        width: 38
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,6 +191,8 @@ TextureImporter:
       bones: []
       spriteID: 4bd9ae59b2790f040b9aac2cba883114
       internalID: 1124802428
+      spriteID: d66b7fa7ab492db46b94b5712b820c98
+      internalID: 1939520671
       vertices: []
       indices: 
       edges: []
@@ -187,6 +205,10 @@ TextureImporter:
         y: 0
         width: 50
         height: 50
+        x: 163
+        y: 10
+        width: 36
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,6 +218,8 @@ TextureImporter:
       bones: []
       spriteID: 8f2ca95231a7b03459bb07869d73e7eb
       internalID: -95964277
+      spriteID: 194ef380c88dbec459107e1b230b24f3
+      internalID: 1496732762
       vertices: []
       indices: 
       edges: []
@@ -208,6 +232,10 @@ TextureImporter:
         y: 0
         width: 50
         height: 50
+        x: 208
+        y: 10
+        width: 28
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,6 +245,8 @@ TextureImporter:
       bones: []
       spriteID: 62cbf6fc70ebeee4b854fa8ea1d8e159
       internalID: -2093760164
+      spriteID: ea5eb11cde5e50c4e953388a7606683f
+      internalID: -1535832182
       vertices: []
       indices: 
       edges: []
@@ -229,6 +259,10 @@ TextureImporter:
         y: 0
         width: 50
         height: 50
+        x: 257
+        y: 10
+        width: 26
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,6 +272,8 @@ TextureImporter:
       bones: []
       spriteID: 216cd58dcf75e4642a27e709742185de
       internalID: 1668532171
+      spriteID: 4a6d7c397ad98564f830b4ccd1c868f6
+      internalID: -1148085659
       vertices: []
       indices: 
       edges: []
@@ -259,6 +295,12 @@ TextureImporter:
       knightstrike-Sheet_4: -2093760164
       knightstrike-Sheet_1: 1389634879
       knightstrike-Sheet_0: 1508802902
+      knightstrike-Sheet_2: 1939520671
+      knightstrike-Sheet_5: -1148085659
+      knightstrike-Sheet_3: 1496732762
+      knightstrike-Sheet_4: -1535832182
+      knightstrike-Sheet_1: 549189271
+      knightstrike-Sheet_0: -1635649238
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

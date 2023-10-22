@@ -104,6 +104,7 @@ MonoBehaviour:
   ID: ghost
   default_speed: 0.04
   speed: 0.04
+  enemyAnimator: {fileID: -8289462273932842804}
   Player: {fileID: 0}
   player: {fileID: 0}
   enemyHPScript: {fileID: 3712078245144075352}

@@ -103,7 +103,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: candelabra special attack_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 0
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b78ea5df8fef3a47a65124181a288fd
+      internalID: -1761991029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: candelabra special attack_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 0
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d8af671c3c6a54abb1798e54c2b41f
+      internalID: -485996624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: candelabra special attack_2
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 0
+        width: 29
+        height: 47
+      alignment: 9
+      pivot: {x: 0.52, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f68e35144ff8445468fca443c952ab36
+      internalID: 615936789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: candelabra special attack_4
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 0
+        width: 49
+        height: 48
+      alignment: 9
+      pivot: {x: 0.54295814, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ac6b424fa383164db5011da11eb88e9
+      internalID: 809830634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: candelabra special attack_7
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 0
+        width: 49
+        height: 48
+      alignment: 9
+      pivot: {x: 0.52454734, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b4f01a3894ab3b44aec04bbfd4731eb
+      internalID: 397318372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +219,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      candelabra special attack_8: 823767485
+      candelabra special attack_4: 809830634
+      candelabra special attack_0: -1761991029
+      candelabra special attack_10: 1540698500
+      candelabra special attack_1: -485996624
+      candelabra special attack_3: -556130803
+      candelabra special attack_6: -322957388
+      candelabra special attack_7: 397318372
+      candelabra special attack_2: 615936789
+      candelabra special attack_5: -1010393247
+      candelabra special attack_11: -212123156
+      candelabra special attack_9: 797742221
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
