@@ -9,6 +9,8 @@ public class EnemyHP : MonoBehaviour
     public string ID;
     public bool is_spawning_in;
 
+    public GameObject burn_flame;
+
     public Animator enemyAnimator;
     public PolygonCollider2D enemy_collider;
 
@@ -92,6 +94,7 @@ public class EnemyHP : MonoBehaviour
     private IEnumerator TakeBurnDamage(int dmg, float duration, float cooldown){
         for(float i = 0;i < duration;i += cooldown){
             yield return new WaitForSeconds(cooldown);
+            BurnFlash();
             HP -= dmg;
             if(HP <= 0){
                 EnemyDeath();
@@ -100,6 +103,11 @@ public class EnemyHP : MonoBehaviour
                 EnemyHurt(dmg);
             }
         }
+    }
+
+    private void BurnFlash(){
+        GameObject burn_sprite = Instantiate(burn_flame, gameObject.transform.position, Quaternion.identity);
+        Destroy(burn_sprite, 0.25f);
     }
 
     private void EnemyDeath(){

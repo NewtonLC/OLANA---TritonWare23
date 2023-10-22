@@ -10,6 +10,9 @@ public class EnemyMovement : MonoBehaviour
     public float default_speed;
     public float speed;
 
+    public float size_height;
+    public float size_width;
+
     //For animating
     public Animator enemyAnimator;
 
@@ -107,10 +110,16 @@ public class EnemyMovement : MonoBehaviour
 
         //Face the direction of the player
         if(player.position.x < transform.position.x){
-            transform.localScale = new Vector3(-1, 1, 1);        //Turn to face the left
+            transform.localScale = new Vector3(-size_width, size_height, 1);        //Turn to face the left
+            if(string.Equals(ID, "gargoyle")){
+                transform.localScale = new Vector3(size_width, size_height, 1);    //Turn to face the left
+            }
         }
         else{
-            transform.localScale = new Vector3(1, 1, 1);         //Turn to face the right
+            transform.localScale = new Vector3(size_width, size_height, 1);         //Turn to face the right
+            if(string.Equals(ID, "gargoyle")){
+                transform.localScale = new Vector3(-size_width, size_height, 1);    //Turn to face the right
+            }
         }
     }
 

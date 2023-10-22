@@ -32,6 +32,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.49, y: -0.12, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_ConstrainProportionsScale: 0
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,6 +105,8 @@ MonoBehaviour:
   ID: ghost
   default_speed: 0.04
   speed: 0.04
+  size_height: 1.5
+  size_width: 1.5
   enemyAnimator: {fileID: -8289462273932842804}
   Player: {fileID: 0}
   player: {fileID: 0}
@@ -139,6 +142,7 @@ MonoBehaviour:
   Enemy_dmg: 1
   ID: ghost
   is_spawning_in: 0
+  burn_flame: {fileID: 2976655202023141087, guid: fb49eaeee3868f446bdb0f17f3b92ad3, type: 3}
   enemyAnimator: {fileID: -8289462273932842804}
   enemy_collider: {fileID: 3712078245144075347}
   gargoyleMovement: {fileID: 0}

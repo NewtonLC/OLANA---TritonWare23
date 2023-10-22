@@ -33,6 +33,8 @@ Transform:
   m_GameObject: {fileID: 8480876951467950104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.49, y: -0.12, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_ConstrainProportionsScale: 0
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -104,16 +106,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: armor
-  default_speed: 0.03
-  speed: 0.03
+  default_speed: 0.05
+  speed: 0.05
+  size_height: 2.5
+  size_width: 2.5
   enemyAnimator: {fileID: 86042137}
   Player: {fileID: 0}
   player: {fileID: 0}
   enemyHPScript: {fileID: 8480876951467950105}
   running_away: 0
-  lunge_distance: 3
-  lunge_length: 4
-  lunge_speed: 0.15
+  lunge_distance: 5
+  lunge_length: 6
+  lunge_speed: 0.25
   lunge_startup: 0.6
   lunge_cooldown: 5
   ghost_speedRate: 1.003
@@ -141,6 +145,7 @@ MonoBehaviour:
   Enemy_dmg: 1
   ID: armor
   is_spawning_in: 0
+  burn_flame: {fileID: 2976655202023141087, guid: fb49eaeee3868f446bdb0f17f3b92ad3, type: 3}
   enemyAnimator: {fileID: 86042137}
   enemy_collider: {fileID: 8480876951467950098}
   gargoyleMovement: {fileID: 0}
