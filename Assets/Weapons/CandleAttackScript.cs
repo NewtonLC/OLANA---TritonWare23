@@ -42,7 +42,6 @@ public class CandleAttackScript : MonoBehaviour
     private void Candle_Attack(){
         if (can_attack){
             Debug.Log("Candelabra attack!");
-            animator.SetBool("isAttack", true);
             //animator.Play("Player_Candelabra_Attack", -1, 0f);
             can_attack = false;
             Face_Cursor();
@@ -72,11 +71,12 @@ public class CandleAttackScript : MonoBehaviour
 
     private IEnumerator Attack_Duration(){
         //Show the sword and turn on the collider
-        attack_renderer.color = attack_active;
+        //attack_renderer.color = attack_active;
         attack_collider.enabled = true;
+        animator.SetBool("isAttack", true);
         yield return new WaitForSeconds(attack_duration);
         //Hide the sword and turn off the collider
-        attack_renderer.color = attack_inactive;
+        //attack_renderer.color = attack_inactive;
         animator.SetBool("isAttack", false);
         attack_collider.enabled = false;
     }

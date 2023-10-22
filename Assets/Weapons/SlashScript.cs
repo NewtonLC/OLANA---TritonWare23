@@ -29,11 +29,8 @@ public class SlashScript : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0) && string.Equals(WeaponSwitchScript.current_weapon_equipped, "sword")){
             //Swing sword
-            animator.SetBool("isAttack", true);
             //animator.Play("Player_Sword_Attack", -1, 0f);
-            Debug.Log("First" +animator.GetBool("isAttack"));
             Slash_Attack();
-            Debug.Log("Second" + animator.GetBool("isAttack"));
         }
     }
 
@@ -68,12 +65,12 @@ public class SlashScript : MonoBehaviour
 
     private IEnumerator Slash_Duration(){
         //Show the sword and turn on the collider
+        animator.SetBool("isAttack", true);
         slash_collider.enabled = true;
         slash_renderer.color = slash_active;
         yield return new WaitForSeconds(slash_duration);
         //Hide the sword and turn off the collider
         animator.SetBool("isAttack", false);
-        Debug.Log("Third" + animator.GetBool("isAttack"));
         slash_collider.enabled = false;
         slash_renderer.color = slash_inactive;
     }

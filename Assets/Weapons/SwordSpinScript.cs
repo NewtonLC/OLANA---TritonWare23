@@ -47,12 +47,12 @@ public class SwordSpinScript : MonoBehaviour
 
     private IEnumerator Spin_Duration(){
         //Show the sword and turn on the collider
-        spin_renderer.color = spin_active;
+        //spin_renderer.color = spin_active;
         spin_collider.enabled = true;
         animator.SetBool("isSpecial", true);
         yield return new WaitForSeconds(spin_duration);
         //Hide the sword and turn off the collider
-        spin_renderer.color = spin_inactive;
+        //spin_renderer.color = spin_inactive;
         spin_collider.enabled = false;
     }
 

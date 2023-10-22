@@ -42,11 +42,11 @@ public class CandleShieldScript : MonoBehaviour
 
     private IEnumerator Shield_Duration(){
         //Show the sword and turn on the collider
-        shield_renderer.color = shield_active;
+        //shield_renderer.color = shield_active;
         shield_collider.enabled = true;
         yield return new WaitForSeconds(shield_duration);
         //Hide the sword and turn off the collider
-        shield_renderer.color = shield_inactive;
+        //shield_renderer.color = shield_inactive;
         shield_collider.enabled = false;
         StartCoroutine(Shield_Cooldown());
     }
