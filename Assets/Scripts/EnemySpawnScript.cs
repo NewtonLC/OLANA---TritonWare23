@@ -30,7 +30,7 @@ public class EnemySpawnScript : MonoBehaviour
             StartCoroutine(SpawnWaveEnemies());
             intermission_active = true;
         }
-        if(intermission_active && num_enemies_killed == num_enemies_spawned){
+        if(intermission_active && num_enemies_killed >= num_enemies_spawned){
             intermission_active = false;
         }
         Debug.Log(num_enemies_spawned + " " + num_enemies_killed);
