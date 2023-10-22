@@ -9,6 +9,8 @@ public class PlayerHP : MonoBehaviour
     public bool invincible = false;
     public float invincibility_duration = 1;
 
+    [SerializeField] private GameOver gameOver;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,10 @@ public class PlayerHP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (HP == 0)
+        {
+            gameOver.setUp();
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision){

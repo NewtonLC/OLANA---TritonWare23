@@ -7,11 +7,16 @@ public class EnemyMovement : MonoBehaviour
     //An EnemyObject's ID will determine whether it is a ghost, suit of armor, vampire, gargoyle.
     //Each enemy has a different movement/behavior pattern
     public string ID;
+    public float default_speed;
     public float speed;
+
+    //For animating
+    public Animator enemyAnimator;
 
     //Player reference
     public GameObject Player;
     public Transform player;
+    public EnemyHP enemyHPScript;
 
     //Enemy RigidBody2D Reference
     //Rigidbody2D rb;
@@ -64,8 +69,11 @@ public class EnemyMovement : MonoBehaviour
     }
 
     private void OnTriggerStay2D(Collider2D collision){
-        if((collision.gameObject.CompareTag("PlayerCandleShield"))){
+        if(collision.gameObject.CompareTag("PlayerCandleShield")){
             StartCoroutine(Run_Away());
+        }
+        if(string.Equals(ID, "ghost") && (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("PlayerCandleShield") || collision.gameObject.CompareTag("PlayerCandleAttack") || collision.gameObject.CompareTag("PlayerSlash") || collision.gameObject.CompareTag("PlayerSwordSpin"))){
+            speed = default_speed;
         }
     }
 
@@ -78,6 +86,10 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(enemyHPScript.is_spawning_in){
+            return;
+        }
+
         switch(ID){
             case "ghost":
                 GhostMovement();
@@ -91,6 +103,14 @@ public class EnemyMovement : MonoBehaviour
             case "vampire":
                 VampireMovement();
                 break;
+        }
+
+        //Face the direction of the player
+        if(player.position.x < transform.position.x){
+            transform.localScale = new Vector3(-1, 1, 1);        //Turn to face the left
+        }
+        else{
+            transform.localScale = new Vector3(1, 1, 1);         //Turn to face the right
         }
     }
 
@@ -168,12 +188,14 @@ public class EnemyMovement : MonoBehaviour
     }
 
     private IEnumerator ArmorLunge(float startup){
+        enemyAnimator.SetBool("knightlunging", true);
         lunge_is_charging = true;
         yield return new WaitForSeconds(startup);
         lunge_is_charging = false;
         lunge_is_active = true;
         yield return new WaitForSeconds(lunge_duration());
         lunge_is_active = false;
+        enemyAnimator.SetBool("knightlunging", false);
     }
 
     private IEnumerator ArmorLungeCooldown(float cooldown){
@@ -234,6 +256,7 @@ public class EnemyMovement : MonoBehaviour
     // Manages the time and respective booleans when a gargoyle is carrying out a stomp
     private IEnumerator gargoyleStomp()
     {
+        enemyAnimator.SetBool("gargoylestomping", true);
         stompIsActive = true;
         stompIsCharging = true;
         yield return new WaitForSeconds(stompChargeTime);
@@ -241,6 +264,7 @@ public class EnemyMovement : MonoBehaviour
         stompMovingDown = true;
         yield return new WaitForSeconds(stompDuration());
         stompMovingDown = false;
+        enemyAnimator.SetBool("gargoylestomping", false);
         onGround = true;
         yield return new WaitForSeconds(timeOnGround);
         onGround = false;

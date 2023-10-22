@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 292363930}
   - component: {fileID: 292363931}
   - component: {fileID: 86042137}
+  - component: {fileID: 8480876951467950098}
   m_Layer: 0
   m_Name: ArmorObject
   m_TagString: Enemy
@@ -32,8 +33,8 @@ Transform:
   m_GameObject: {fileID: 8480876951467950104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.49, y: -0.12, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -103,9 +104,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: armor
+  default_speed: 0.03
   speed: 0.03
+  enemyAnimator: {fileID: 86042137}
   Player: {fileID: 0}
   player: {fileID: 0}
+  enemyHPScript: {fileID: 8480876951467950105}
   running_away: 0
   lunge_distance: 3
   lunge_length: 4
@@ -136,6 +140,9 @@ MonoBehaviour:
   HP: 4
   Enemy_dmg: 1
   ID: armor
+  is_spawning_in: 0
+  enemyAnimator: {fileID: 86042137}
+  enemy_collider: {fileID: 8480876951467950098}
   gargoyleMovement: {fileID: 0}
 --- !u!50 &8480876951467950109
 Rigidbody2D:
@@ -157,7 +164,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!70 &292363930
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -200,7 +207,7 @@ Animator:
   m_GameObject: {fileID: 8480876951467950104}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f88f69fd82c60f84b951a7836d9b9025, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2821f44ca0e1e4246a749b8e6cd4b7c3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -210,3 +217,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &8480876951467950098
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8480876951467950104}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.96875}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.5}
+      - {x: -0.15234375, y: 0.47265625}
+      - {x: -0.29296875, y: 0.40234375}
+      - {x: -0.40234375, y: 0.29296875}
+      - {x: -0.47265625, y: 0.15234375}
+      - {x: -0.5, y: 0}
+      - {x: -0.47265625, y: -0.15234375}
+      - {x: -0.40234375, y: -0.29296875}
+      - {x: -0.29296875, y: -0.40234375}
+      - {x: -0.15234375, y: -0.47265625}
+      - {x: 0, y: -0.5}
+      - {x: 0.15234375, y: -0.47265625}
+      - {x: 0.29296875, y: -0.40234375}
+      - {x: 0.40234375, y: -0.29296875}
+      - {x: 0.47265625, y: -0.15234375}
+      - {x: 0.5, y: 0}
+      - {x: 0.47265625, y: 0.15234375}
+      - {x: 0.40234375, y: 0.29296875}
+      - {x: 0.29296875, y: 0.40234375}
+      - {x: 0.15234375, y: 0.47265625}

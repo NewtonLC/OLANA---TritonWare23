@@ -101,6 +101,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -108,6 +120,10 @@ TextureImporter:
       name: gargoylestrike_0
       rect:
         serializedVersion: 2
+        x: 0
+        y: 0
+        width: 40
+        height: 40
         x: 4
         y: 6
         width: 32
@@ -119,6 +135,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+      spriteID: e1dc2ccf3e9510540ae7361e12e1dd0c
+      internalID: 1350296492
       spriteID: 1cb87d28537982e4a8b7f912de9859ce
       internalID: -692653177
       vertices: []
@@ -129,17 +147,20 @@ TextureImporter:
       name: gargoylestrike_1
       rect:
         serializedVersion: 2
+        x: 40
+        y: 0
+        height: 40
         x: 44
         y: 11
-        width: 31
         height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
+      spriteID: 23c897dbdabaeba4396da4df12f01604
+      internalID: 71772393
       spriteID: 3425d0fa3df1a734e9d0dba1eb85ecd7
       internalID: -241651636
       vertices: []
@@ -150,6 +171,10 @@ TextureImporter:
       name: gargoylestrike_2
       rect:
         serializedVersion: 2
+        x: 80
+        y: 0
+        width: 40
+        height: 40
         x: 84
         y: 8
         width: 31
@@ -161,6 +186,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+      spriteID: d68113a4034960f49bd84020fd10044f
+      internalID: 1112787187
       spriteID: dff0c03f04369f6468d40ded98801551
       internalID: -232233362
       vertices: []
@@ -171,6 +198,10 @@ TextureImporter:
       name: gargoylestrike_3
       rect:
         serializedVersion: 2
+        x: 120
+        y: 0
+        width: 40
+        height: 40
         x: 124
         y: 5
         width: 31
@@ -182,6 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+      spriteID: 279f532d39af6bb4c9f69134de1b8535
+      internalID: -1927039320
       spriteID: 2f5d3b3ec0df03b4682a77635bab64bc
       internalID: 599131613
       vertices: []
@@ -199,6 +232,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      gargoylestrike_2: 1112787187
+      gargoylestrike_0: 1350296492
+      gargoylestrike_1: 71772393
+      gargoylestrike_3: -1927039320
       gargoylestrike_2: -232233362
       gargoylestrike_0: -692653177
       gargoylestrike_1: -241651636
