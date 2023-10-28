@@ -5,8 +5,8 @@ using UnityEngine;
 public class CandleAttackScript : MonoBehaviour
 {
     //Variables for handling attacks
-    public float attack_duration = 0.1f;
-    private float attack_cooldown = 0.5f;
+    public float attack_duration;
+    public float attack_cooldown = 0.5f;
     private float attack_distance_to_player = 1f;
     public bool can_attack = true;
     public int attack_dmg;

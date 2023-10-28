@@ -564,7 +564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spin_dmg: 5
-  spin_attack_duration: 0.5
+  spin_attack_duration: 0.2
   spin_duration: 1
   spin_cooldown: 15
   can_spin: 1
@@ -3391,7 +3391,7 @@ Transform:
   m_GameObject: {fileID: 616779276}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1793696481}
@@ -3515,7 +3515,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e3e703410ebd2d40bc2bb2b05dbb134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slash_duration: 0.1
+  slash_duration: 0.25
+  slash_cooldown: 0.5
   can_slash: 1
   slash_dmg: 2
   slash_active: {r: 1, g: 0.627451, b: 0.627451, a: 1}
@@ -9418,7 +9419,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.90872425, y: 0.97598}
+  m_Size: {x: 0.5, y: 0.7}
   m_EdgeRadius: 0
 --- !u!114 &1793696478
 MonoBehaviour:
@@ -10402,7 +10403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b38a1a7c207aa47b31a6452061125c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack_duration: 0.1
+  attack_duration: 0.2
+  attack_cooldown: 0.5
   can_attack: 1
   attack_dmg: 1
   burn_dmg: 1

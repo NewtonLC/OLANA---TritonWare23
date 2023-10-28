@@ -5,8 +5,8 @@ using UnityEngine;
 public class SlashScript : MonoBehaviour
 {
     //Variables for handling attacks
-    public float slash_duration = 0.1f;
-    private float slash_cooldown = 0.5f;
+    public float slash_duration;
+    public float slash_cooldown = 0.5f;
     private float slash_distance_to_player = 1.2f;
     public bool can_slash = true;
     public int slash_dmg;
