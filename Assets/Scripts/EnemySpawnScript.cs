@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawnScript : MonoBehaviour
 {
@@ -20,7 +21,30 @@ public class EnemySpawnScript : MonoBehaviour
     private float x_left_bound = -28;    // Enemies can spawn anywhere from x_left_bound to x_right_bound
     private float x_right_bound = 28;    
     private float y_upper_bound = 3;     // Enemies can spawn anywhere from y_upper_bound to y_lower_bound
-    private float y_lower_bound = -14;     
+    private float y_lower_bound = -14;    
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Check if this object's scene is the newly loaded scene
+        if (scene.name == gameObject.scene.name)
+        {
+            // The object's scene was loaded
+            current_wave = 0;
+            num_enemies_spawned = 0;
+            num_enemies_killed = 0;
+            intermission_active = false;
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -33,13 +57,12 @@ public class EnemySpawnScript : MonoBehaviour
         if(intermission_active && num_enemies_killed >= num_enemies_spawned){
             intermission_active = false;
         }
-        Debug.Log(num_enemies_spawned + " " + num_enemies_killed);
     }
 
     private IEnumerator SpawnWaveEnemies(){
         num_enemies_spawned += (current_wave*2)+5;
         for(int i = 0;i < (current_wave*2)+5;i++){
-            yield return new WaitForSeconds(base_enemy_spawn_interval * Random.Range(0.7f, 1.3f));
+            yield return new WaitForSeconds(1);     //Problem code: exits program for some reason?
             Spawn();
         }
     }
@@ -61,10 +84,11 @@ public class EnemySpawnScript : MonoBehaviour
     }
 
     private GameObject Choose_Enemy(){
-        if (Random.value < 0.5f){           //50% chance of ghost spawn
+        float randomValue = Random.value;
+        if (randomValue < 0.5f){           //50% chance of ghost spawn
             return ghost_prefab;
         } 
-        else if (Random.value >= 0.5f && Random.value < 0.80f){           //30% chance of knight spawn
+        else if (randomValue >= 0.5f && randomValue < 0.80f){           //30% chance of knight spawn
             return knight_prefab;
         } 
         else{           //20% chance of gargoyle spawn

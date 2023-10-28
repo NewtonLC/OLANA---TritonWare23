@@ -33,8 +33,6 @@ public class PlayerHP : MonoBehaviour
 
             if(enemyScript != null){
                 TakeDamage(enemyScript.Enemy_dmg);
-                Debug.Log(enemyScript.ID);
-                Debug.Log(HP);
             }
         }
     }
