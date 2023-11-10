@@ -7,9 +7,15 @@ public class EnemySpawnScript : MonoBehaviour
 {
     static public int current_wave = 0;
     static public bool intermission_active = false;
-
     static public int num_enemies_spawned = 0;
-    static public int num_enemies_killed = 0;
+
+    //Enemies killed & Enemy point values
+    static public int num_ghosts_killed = 0;
+    static public int num_knights_killed = 0;
+    static public int num_gargoyles_killed = 0;
+    static public int ghost_points = 5;
+    static public int knight_points = 10;
+    static public int gargoyle_points = 15;
 
     public float base_enemy_spawn_interval;
 
@@ -41,7 +47,9 @@ public class EnemySpawnScript : MonoBehaviour
             // The object's scene was loaded
             current_wave = 0;
             num_enemies_spawned = 0;
-            num_enemies_killed = 0;
+            num_ghosts_killed = 0;
+            num_knights_killed = 0;
+            num_gargoyles_killed = 0;
             intermission_active = false;
         }
     }
@@ -54,9 +62,10 @@ public class EnemySpawnScript : MonoBehaviour
             StartCoroutine(SpawnWaveEnemies());
             intermission_active = true;
         }
-        if(intermission_active && num_enemies_killed >= num_enemies_spawned){
+        if(intermission_active && num_Enemies_Killed() >= num_enemies_spawned){
             intermission_active = false;
         }
+        Debug.Log(num_Enemies_Killed() + " dead. " + num_enemies_spawned + " spawned.");
     }
 
     private IEnumerator SpawnWaveEnemies(){
@@ -84,15 +93,19 @@ public class EnemySpawnScript : MonoBehaviour
     }
 
     private GameObject Choose_Enemy(){
-        float randomValue = Random.value;
-        if (randomValue < 0.5f){           //50% chance of ghost spawn
+        float randomValue = Random.Range(0.0f,1.0f);                    //Returns random float from 0 to 1
+        if (randomValue < 0.5f){                                        //50% chance of ghost spawn
             return ghost_prefab;
         } 
         else if (randomValue >= 0.5f && randomValue < 0.80f){           //30% chance of knight spawn
             return knight_prefab;
         } 
-        else{           //20% chance of gargoyle spawn
+        else{                                                           //20% chance of gargoyle spawn
             return gargoyle_prefab;
         } 
+    }
+
+    private int num_Enemies_Killed(){
+        return num_ghosts_killed + num_knights_killed + num_gargoyles_killed;
     }
 }

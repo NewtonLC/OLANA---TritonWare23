@@ -9,6 +9,9 @@ public class EnemyHP : MonoBehaviour
     public string ID;
     public bool is_spawning_in;
 
+    //Currently. burning cannot stack.
+    private bool is_burning;
+
     public GameObject burn_flame;
 
     public Animator enemyAnimator;
@@ -30,9 +33,10 @@ public class EnemyHP : MonoBehaviour
         enemy_collider.enabled = false;
         is_spawning_in = true;
         yield return new WaitForSeconds(1.2f);
+        enemyAnimator.SetBool("enemySpawned", true);
+        yield return new WaitForSeconds(0.3f);
         enemy_collider.enabled = true;
         is_spawning_in = false;
-        enemyAnimator.SetBool("enemySpawned", true);
     }
 
     private void OnTriggerStay2D(Collider2D collision) {
@@ -45,7 +49,7 @@ public class EnemyHP : MonoBehaviour
                 if (slashScript != null) 
                 {
                     TakeDamage(slashScript.slash_dmg, slashScript.slash_duration);
-                    Debug.Log("Enemy: " + ID + " | HP: " + HP);
+                    //Debug.Log("Enemy: " + ID + " | HP: " + HP);
                 }
             }
             if (collision.gameObject.CompareTag("PlayerCandleAttack") && !invincible)
@@ -55,8 +59,10 @@ public class EnemyHP : MonoBehaviour
                 if (candleScript != null)
                 {
                     TakeDamage(candleScript.attack_dmg, candleScript.attack_duration);
-                    StartCoroutine(TakeBurnDamage(candleScript.burn_dmg, candleScript.burn_duration, candleScript.burn_cooldown));
-                    Debug.Log("Enemy: " + ID + " | HP: " + HP);
+                    if(!is_burning){
+                        StartCoroutine(TakeBurnDamage(candleScript.burn_dmg, candleScript.burn_duration, candleScript.burn_cooldown));
+                    }
+                    //Debug.Log("Enemy: " + ID + " | HP: " + HP);
                 }
             }
             if (collision.gameObject.CompareTag("PlayerSwordSpin") && !invincible)
@@ -66,7 +72,7 @@ public class EnemyHP : MonoBehaviour
                 if (spinScript != null) 
                 {
                     TakeDamage(spinScript.spin_dmg, spinScript.spin_attack_duration);
-                    Debug.Log("Enemy: " + ID + " | HP: " + HP);
+                    //Debug.Log("Enemy: " + ID + " | HP: " + HP);
                 }
             }
         }
@@ -78,7 +84,7 @@ public class EnemyHP : MonoBehaviour
             HP -= dmg;
             StartCoroutine(DamageCooldown(duration));
             if(HP <= 0){
-                EnemyDeath();
+                StartCoroutine(EnemyDeath());
             }
             else{
                 EnemyHurt(dmg);
@@ -92,30 +98,47 @@ public class EnemyHP : MonoBehaviour
     }
 
     private IEnumerator TakeBurnDamage(int dmg, float duration, float cooldown){
+        is_burning = true;
         for(float i = 0;i < duration;i += cooldown){
             yield return new WaitForSeconds(cooldown);
             BurnFlash();
             HP -= dmg;
             if(HP <= 0){
-                EnemyDeath();
+                StartCoroutine(EnemyDeath());
             }
             else{
                 EnemyHurt(dmg);
             }
         }
+        is_burning = false;
     }
 
     private void BurnFlash(){
         GameObject burn_sprite = Instantiate(burn_flame, gameObject.transform.position, Quaternion.identity);
-        Destroy(burn_sprite, 0.25f);
+        Destroy(burn_sprite, 0.3f);
     }
 
-    private void EnemyDeath(){
+    private IEnumerator EnemyDeath(){
         Debug.Log("Enemy " + ID + " died");
         enemy_collider.enabled = false;
-        enemyAnimator.SetBool("enemyDead", true);
-        EnemySpawnScript.num_enemies_killed++;
-        Destroy(gameObject, 1);
+        enemyAnimator.SetTrigger("enemyIsDead");
+        yield return new WaitForSeconds(1);
+        Increment_Enemies_Killed();
+        Destroy(gameObject);
+    }
+
+    private void Increment_Enemies_Killed(){
+        switch(ID){
+            case "ghost":
+                EnemySpawnScript.num_ghosts_killed++;
+                break;
+            case "knight":
+                EnemySpawnScript.num_knights_killed++;
+                break;
+            case "gargoyle":
+                EnemySpawnScript.num_gargoyles_killed++;
+                break;
+        }
     }
 
     private void EnemyHurt(int dmg){

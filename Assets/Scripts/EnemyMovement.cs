@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    //An EnemyObject's ID will determine whether it is a ghost, suit of armor, vampire, gargoyle.
+    //An EnemyObject's ID will determine whether it is a ghost, knight, vampire, gargoyle.
     //Each enemy has a different movement/behavior pattern
     public string ID;
     public float default_speed;
@@ -97,8 +97,8 @@ public class EnemyMovement : MonoBehaviour
             case "ghost":
                 GhostMovement();
                 break;
-            case "armor":
-                ArmorMovement();
+            case "knight":
+                KnightMovement();
                 break;
             case "gargoyle":
                 GargoyleMovement();
@@ -166,9 +166,9 @@ public class EnemyMovement : MonoBehaviour
     }*/
 
 
-    // Method that handle's armor movement patterns
-    // Armors will ... (Lunge at player?)
-    private void ArmorMovement(){
+    // Method that handle's knight movement patterns
+    // Knights will lunge at player once the player enters a certain range.
+    private void KnightMovement(){
         Vector3 directionTo = player.position - transform.position;
         
         // Moves the enemy towards the player every frame unless they're running away
@@ -191,12 +191,12 @@ public class EnemyMovement : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
         if(distanceToPlayer < lunge_distance && lunge_is_cooled_down){
-            StartCoroutine(ArmorLunge(lunge_startup));
-            StartCoroutine(ArmorLungeCooldown(lunge_cooldown));
+            StartCoroutine(KnightLunge(lunge_startup));
+            StartCoroutine(KnightLungeCooldown(lunge_cooldown));
         }
     }
 
-    private IEnumerator ArmorLunge(float startup){
+    private IEnumerator KnightLunge(float startup){
         enemyAnimator.SetBool("knightlunging", true);
         lunge_is_charging = true;
         yield return new WaitForSeconds(startup);
@@ -207,7 +207,7 @@ public class EnemyMovement : MonoBehaviour
         enemyAnimator.SetBool("knightlunging", false);
     }
 
-    private IEnumerator ArmorLungeCooldown(float cooldown){
+    private IEnumerator KnightLungeCooldown(float cooldown){
         lunge_is_cooled_down = false;
         yield return new WaitForSeconds(cooldown);
         lunge_is_cooled_down = true;

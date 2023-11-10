@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b46c66c73ba27b04b8cd58351b2af119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: armor
+  ID: knight
   default_speed: 0.05
   speed: 0.05
   size_height: 2.5
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 4
   Enemy_dmg: 1
-  ID: armor
+  ID: knight
   is_spawning_in: 0
   burn_flame: {fileID: 2976655202023141087, guid: fb49eaeee3868f446bdb0f17f3b92ad3, type: 3}
   enemyAnimator: {fileID: 86042137}
