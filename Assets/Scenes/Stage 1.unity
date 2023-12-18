@@ -565,7 +565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spin_dmg: 5
   spin_attack_duration: 0.2
-  spin_duration: 1
+  spin_duration: 0.6
   spin_cooldown: 15
   can_spin: 1
   spin_active: {r: 1, g: 1, b: 0.627451, a: 0.5882353}

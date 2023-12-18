@@ -31,7 +31,7 @@ public class PlayerHP : MonoBehaviour
         {
             EnemyHP enemyScript = collision.gameObject.GetComponent<EnemyHP>();
 
-            if(enemyScript != null){
+            if(enemyScript != null && enemyScript.enemy_collider.enabled == true){
                 TakeDamage(enemyScript.Enemy_dmg);
             }
         }
