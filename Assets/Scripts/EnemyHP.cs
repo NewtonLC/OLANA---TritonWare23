@@ -34,7 +34,7 @@ public class EnemyHP : MonoBehaviour
         is_spawning_in = true;
         yield return new WaitForSeconds(1.2f);
         enemyAnimator.SetBool("enemySpawned", true);
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.6f);
         enemy_collider.enabled = true;
         is_spawning_in = false;
     }
